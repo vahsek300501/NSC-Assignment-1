@@ -1,13 +1,11 @@
-import hashlib
 from encrypt import encrypt
 from decrypt import decrypt
-
-def getHashedString(text):
-    return hashlib.sha256(text.encode()).hexdigest()
+from utils import getHashedString
+from bruteForceAttack import bruteForceKey
 
 def main():
-    text = "hellothisiskeshav"
-    key = "abcd"
+    text = "hellothisiskeshavandwearetestingbruteforcingakey"
+    key = "al"
     print("Plain text is: "+text)
     cipherText = encrypt(text,key)
     cipherText += getHashedString(text)
@@ -20,5 +18,9 @@ def main():
     print("Hashed value: "+getHashedString(decryptedCipherText))
     print("Obtained hash value: "+hashValue)
     print(getHashedString(decryptedCipherText) == hashValue)
-
+    print()
+    print()
+    print()
+    print()
+    print(bruteForceKey([cipherText],4))
 main()

@@ -1,3 +1,5 @@
+import hashlib
+
 forwardMapping = {
     "a": 0,
     "b": 1,
@@ -66,3 +68,6 @@ def constructSquare():
 			cntRow.append(reverseMapping[cipherNumber])
 		table.append(cntRow)
 	return table
+
+def getHashedString(text):
+    return hashlib.sha256(text.encode()).hexdigest()
