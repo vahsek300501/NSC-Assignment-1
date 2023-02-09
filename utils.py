@@ -71,3 +71,6 @@ def constructSquare():
 
 def getHashedString(text):
     return hashlib.sha256(text.encode()).hexdigest()
+
+def seperateHashAndCipherText(cipherTextWithHash):
+    return cipherTextWithHash[:len(cipherTextWithHash)-64], cipherTextWithHash[len(cipherTextWithHash)-64:]

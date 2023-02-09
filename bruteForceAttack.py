@@ -1,10 +1,6 @@
-from utils import reverseMapping, getHashedString
+from utils import reverseMapping, getHashedString, seperateHashAndCipherText
 from decrypt import decrypt
 import pdb
-
-def seperateHashAndCipherText(cipherTextWithHash):
-    return cipherTextWithHash[:len(cipherTextWithHash)-64], cipherTextWithHash[len(cipherTextWithHash)-64:]
-
 
 def testBruteForcedKey(cipherTextList, generatedKey):
     for cipherTextWithHash in cipherTextList:
